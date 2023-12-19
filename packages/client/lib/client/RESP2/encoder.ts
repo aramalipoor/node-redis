@@ -18,7 +18,7 @@ export default function encodeCommand(args: RedisCommandArguments): Array<RedisC
             );
             strings = CRLF;
         } else {
-            throw new TypeError('Invalid argument type');
+            throw new TypeError(`Invalid argument type "${typeof arg}" on index ${i} with data: ${JSON.stringify(args[i])}`);
         }
     }
 
